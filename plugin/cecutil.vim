@@ -2,7 +2,7 @@
 "               save/restore mark position
 "               save/restore selected user maps
 "  Author:	Charles E. Campbell
-"  Version:	18i	NOT RELEASED
+"  Version:	18i	ASTRO-ONLY
 "  Date:	Oct 21, 2013
 "
 "  Saving Restoring Destroying Marks: {{{1
@@ -34,10 +34,12 @@
 if &cp || exists("g:loaded_cecutil")
  finish
 endif
-let g:loaded_cecutil = "v18h"
+let g:loaded_cecutil = "v18i"
 let s:keepcpo        = &cpo
 set cpo&vim
-"DechoRemOn
+"if exists("g:loaded_Decho")  " Decho
+" DechoRemOn
+"endif  " Decho
 
 " =======================
 "  Public Interface: {{{1
@@ -505,7 +507,7 @@ fun! SaveUserMaps(mapmode,maplead,mapchx,suffix)
     let i= i + 1
    endwhile
   endif
-"  call Dret("SaveUserMaps : restoremap_".a:suffix.": ".s:restoremap_{a:suffix})
+"  call Dret("SaveUserMaps : s:restoremap_".a:suffix.": ".s:restoremap_{a:suffix})
 endfun
 
 " ---------------------------------------------------------------------
